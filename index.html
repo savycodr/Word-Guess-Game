@@ -10,16 +10,59 @@
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
-    <body>
-        <div class="container-fluid">
-          <div class="h3">Enter any key to begin.</div>
-          <div class="h5">Wins:</div>
-          <div class="h5">Losses:</div>
-          <div class="h5">Guesses Remaining:</div>
-          <br>
-          <div class="h5">You have guessed:</div>
-        </div>
+<body>
+  <!--This gives a border around the game-->
+  <div class="container-fluid candy_pattern p-md-5">
+    <!--this is white background, where the game is-->
+    <div class="container-fluid bg-white">
 
-    </body>
-    <script src="assets/javascript/game.js"></script>
+      <!--header row-->
+      <div class="row">
+        <div class="col-md-12  mx-md-0 px-md-0 border border-white">
+            <div class="h1 text-center py-md-4 ">The Candy Word Guess Game</div>
+        </div> 
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+           
+
+            <!--wins and losses row-->
+            <div class="row">
+                <div class="col-md-6 ">
+                    <div class="h3" id="displayWins"></div>
+                </div>   
+                <div class="col-md-6 ">
+                    <div class="h3" id="displayLosses"></div>
+                </div>   
+            </div>
+
+            <!--show tries and answers-->
+            <div class="row">
+              <div class="col-md-12">
+                  <div class="h3">Enter a letter to make a guess.</div>
+                  <div class="h3" id="displayTriesLeft"></div>
+                  <br>
+                  <!--not sure if this is going to work since no guesses yet-->
+                  <div class="h4 " id="displayGuessText"></div>
+                  <br>
+                  <div class="h3">Your guesses so far:</div>
+                  <br>
+                  <div class="h3" id="guessesSoFar"></div>
+              </div>
+            </div>
+
+        </div> <!--end of column-->
+        <div class="col-md-2"></div>
+
+        
+      </div> <!--end of row-->
+    </div> <!--end ofconatiner white-->
+  </div> <!-- end of container image-->
+
+</body>
+<script src="assets/javascript/game.js"></script>
 </html>

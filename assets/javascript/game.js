@@ -2,8 +2,7 @@
 // Top Secret!!
 var candyWords = [
   "kisses",
-  "gum"
-  /*,
+  "gum",
   "lollipops",
   "chocolate",
   "gum",
@@ -19,10 +18,9 @@ var candyWords = [
   "spree",
   "skittles",
   "twix"
-  */
 ];
 // keep going until reached 10 tries
-var maxTry = 5;
+var maxTry = 12;
 
 //the number of games won
 var wins = 0;
@@ -119,6 +117,29 @@ function isNewGuess(newGuess, guesses)
     return true;
 }
 
+// functions to show a div for 3 seconds if player won
+function showWin() {
+    document.getElementById("winDiv").style.display="block";
+    setTimeout("hideWin()", 3000);  // 3 seconds
+}
+
+function hideWin() {
+    document.getElementById("winDiv").style.display="none";
+}
+
+// function to show the answer for 5 seconds if player lost
+function showLose() {
+    document.getElementById("loseDiv").style.display="block";
+    document.getElementById("loseDiv").innerHTML="The Answer is: " + theWord;
+    setTimeout("hideLose()", 5000);  // 5 seconds
+}
+
+function hideLose() {
+    document.getElementById("loseDiv").style.display="none";
+}
+
+
+
 // MAIN PROCESS
 // ==============================================================================
 
@@ -204,8 +225,16 @@ document.onkeyup = function(event)
         wins++;
         console.log("Wins: " + wins);
         document.getElementById("displayWins").innerHTML = "Wins: " + wins;
-        // WANT TO SHOW DANCE AND PONY SHOW BEORE RESET GAME
-        resetGame();
+
+        // show the winning image for 5 seconds
+        showWin();
+
+        // Play some winning music
+        var x = document.getElementById("winAudio"); 
+        x.play();
+        
+        // In 3 seconds, reset the game
+        setTimeout("resetGame()", 3000);  // 5 seconds
     }
     else if (triesLeft==0)
     {
@@ -213,8 +242,14 @@ document.onkeyup = function(event)
         losses++;
         console.log("Losses: " + losses);
         document.getElementById("displayLosses").innerHTML = "Losses: " + losses;
-        // WANT TO SHOW ANSWER BEORE RESET GAME
-        resetGame();
+        // show the losing image for 5 seconds
+        showLose();
+        // Play some losing music
+        var x = document.getElementById("loseAudio"); 
+        x.play();
+
+        // In 5 seconds, reset the game
+        setTimeout("resetGame()", 5000);  // 5 seconds
     }
 
 } 

@@ -17,12 +17,6 @@ button{
     color: white;
 }
 
-/*
-.round{
-    <img src="..." alt="..." class="rounded-circle">
-}
-*/
-
 .color_pattern{
     background-color: blueviolet;
     background-image: url("../images/watercolour-1603115_640.jpg");

@@ -44,11 +44,25 @@
             </div>
             <!--show tries and answers-->
             <div class="row border-top  border-primary" >
-              <div class="col-md-12 pt-md-3">
+              <div class="col-md-8 pt-md-3">
                   <div class="h2" style="font-weight: bold;">Enter a letter to make a guess.</div>
                   <div class="h3  pt-md-3" id="displayTriesLeft"></div>
                   <br>
-                  <div class="h2 pt-md-3 pb-md-3" id="displayGuessText"></div>
+                  <div class="h2 pt-md-5 pb-md-3" id="displayGuessText"></div>
+
+                  <!-- the next two divs are only displayed for a few seconds-->
+                  <div class="h1 text-center" id="winDiv" style="color: yellowgreen; display: none" >
+                    YOU WON!!!!
+                  </div>
+                  <div class="h1" id="loseDiv" style="color: red; display:none" >
+                      SORRY, YOU LOSE
+                  </div>
+              </div>
+              <div class="col-md-4 py-md-3 px-md-0 ">
+                  <img src="assets/images/candy-1961538_640.jpg" class="img-fluid" id="hideME" alt="Candy Image">
+                  <!--
+                  <div id = "winDiv" style="display:none"><img id = "winImage" src = "assets/images/candy-1961538_640.jpg"></div>
+                  -->
               </div>
             </div>
             <div class="row border-top  border-primary" >
@@ -64,8 +78,20 @@
         
       </div> <!--end of row-->
     </div> <!--end ofconatiner white-->
+    <!--  add a credit page-->
+    <a href="credit.html" target="_blanK" style="font-size: 10px; text-align: left; color: white;">Click here for credits</a>
+
   </div> <!-- end of container image-->
 
+  <audio id="winAudio">
+      <source src="assets/Music_Box-Big_Daddy-1389738694.wav" type="audio/wav">
+      Your browser does not support the audio element.
+  </audio>
+  <audio id="loseAudio">
+      <source src="assets/Big_door_closed-Clemens_F-941522533.wav" type="audio/wav">
+      Your browser does not support the audio element.
+  </audio>
 </body>
-<script src="assets/javascript/game.js"></script>
+<script src="assets/javascript/game.js">
+</script>
 </html>

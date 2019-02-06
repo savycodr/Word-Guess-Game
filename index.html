@@ -18,42 +18,45 @@
 
       <!--header row-->
       <div class="row">
-        <div class="col-md-12  mx-md-0 px-md-0 border border-white">
+        <div class="col-md-12  mx-md-0 p-md-4 border border-white color_pattern">
             <div class="h1 text-center py-md-4 ">The Candy Word Guess Game</div>
         </div> 
       </div>
 
       <div class="row">
 
-        <div class="col-md-2"></div>
+        <div class="col-md-2">
+        </div>
 
         <div class="col-md-8">
            
 
             <!--wins and losses row-->
-            <div class="row">
-                <div class="col-md-6 ">
+            <div class="row" style="height:100px;">
+                <div class="col-md-5 pt-md-5">
                     <div class="h3" id="displayWins"></div>
                 </div>   
-                <div class="col-md-6 ">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-5  pt-md-5">
                     <div class="h3" id="displayLosses"></div>
                 </div>   
             </div>
-
             <!--show tries and answers-->
-            <div class="row">
-              <div class="col-md-12">
-                  <div class="h3">Enter a letter to make a guess.</div>
-                  <div class="h3" id="displayTriesLeft"></div>
+            <div class="row border-top  border-primary" >
+              <div class="col-md-12 pt-md-3">
+                  <div class="h2" style="font-weight: bold;">Enter a letter to make a guess.</div>
+                  <div class="h3  pt-md-3" id="displayTriesLeft"></div>
                   <br>
-                  <!--not sure if this is going to work since no guesses yet-->
-                  <div class="h4 " id="displayGuessText"></div>
-                  <br>
-                  <div class="h3">Your guesses so far:</div>
-                  <br>
-                  <div class="h3" id="guessesSoFar"></div>
+                  <div class="h2 pt-md-3 pb-md-3" id="displayGuessText"></div>
               </div>
             </div>
+            <div class="row border-top  border-primary" >
+                <div class="col-md-12 pt-md-3">
+                    <div class="h3 pt-md-3">Your guesses so far:</div>
+                    <div class="h3" id="guessesSoFar"></div>
+                </div>
+              </div>
 
         </div> <!--end of column-->
         <div class="col-md-2"></div>

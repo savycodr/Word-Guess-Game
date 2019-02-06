@@ -57,15 +57,22 @@ var numTries;
 
 resetGame();
 
+// This function will prepare the screen for a new game
 function resetGame()
 {
-    // Get a new word
+    // if we have run through the entire array of candy words, We will reset and run through them again
+    if (numGames==candyWords.length)
+    {
+        numGames = 0;
+    }
+
+    // Get a new top secret candy word
     theWord = candyWords[numGames];
-    // set a new displayWord
+    // set a new displayWord "_ _ _ _"
     displayWord = initDisplayWord(theWord);
-    // reset guesses
+    // reset user guesses
     guesses = new Array();
-    document.getElementById("guessesSoFar").innerHTML = "";
+    document.getElementById("guessesSoFar").innerHTML = "no guesses yet";
     //reset numCorrectGuesses
     numCorrectGuesses = 0;
     // set array of letters from theWord
@@ -75,6 +82,7 @@ function resetGame()
     document.getElementById("displayTriesLeft").innerHTML = "Number of Tries Left: " + maxTry;
     //Increase the number of games for next time
     numGames++;
+   
 }
 
 // This function creates the initial display of _ _ _ _  for the word
@@ -89,8 +97,7 @@ function initDisplayWord(theWord)
       display = display.concat("_ ");
   }
    //Print the word to display for user to see
-    //Eventually need to get rid of commas
-    console.log("HEATHER Word as guessed" + display);
+    console.log("HEATHER Word as guessed " + display);
     document.getElementById("displayGuessText").innerHTML =  display;
     return display;
 }
@@ -115,15 +122,14 @@ function isNewGuess(newGuess, guesses)
 // MAIN PROCESS
 // ==============================================================================
 
-// Captures keyboard input. Depending on the letter pressed it will "call" (execute) different functions.
+// Captures keyboard input. The letter pressed will be the user's guess.
 document.onkeyup = function(event) 
 {
 
-    // currentGuess needs to come from html
     // Captures the key press, converts it to lowercase, and saves it to a variable.
     var currentGuess = event.key.toLowerCase();
     
-    // make sure the current guess is not enter button
+    // make sure the current guess is not the enter button
     if (currentGuess.length !== 1) 
     { 
         alert("Please enter a letter");
@@ -145,13 +151,12 @@ document.onkeyup = function(event)
         console.log("Guesses so far " + guesses.join());
         document.getElementById("guessesSoFar").innerHTML = guesses.join();
 
-        // New array loses all of the previous right answers
-        // need to work with displayWord array
-        // set array of letters from theWord
+        // set array of letters from the displayWord "_ _ a _ s"
         var localDisplay = displayWord.split(" ");
         var displayText = new String();
+        var success = false;
 
-        // see if the current guess matches any letters in the word
+        // see if the current guess matches any letters in the candy word
         for (i=0; i<letters.length; i++)
         {
             if (letters[i] === currentGuess)
@@ -159,22 +164,26 @@ document.onkeyup = function(event)
                 // populate the display with current correct letters
                 localDisplay[i] = currentGuess;
                 numCorrectGuesses++;
-                alert("You did it ");
+                success = true;
+                console.log("You did it ");
             }
            
         }
-        // turn array into a string again
-        for (i=0; i<localDisplay.length; i++)
+        // if the user guessed a correct letter (one that is in the candy word) we need to change the displayWord
+        if (success)
         {
-            console.log(":"+localDisplay[i]+":")
-            displayText = displayText.concat(localDisplay[i] + " ");
-        }
+            // turn array into a string again adding back the spaces "_ _ a _ s a"
+            for (i=0; i<localDisplay.length; i++)
+            {
+                displayText = displayText.concat(localDisplay[i] + " ");
+            }
 
-        displayWord = displayText;
-        alert(displayWord);
-        console.log("Word as guessed" + displayWord);
-        /*  document.getElementById("displayGuessText").innerHTML = displayText;*/
-        document.getElementById("displayGuessText").textContent = displayWord;
+            displayWord = displayText;
+            console.log("Word as guessed:" + displayWord + ":");
+            /*  document.getElementById("displayGuessText").innerHTML = displayText;*/
+            document.getElementById("displayGuessText").textContent = displayWord;
+        }
+        
         numTries++;
     }
     else
@@ -183,8 +192,6 @@ document.onkeyup = function(event)
         return;
     }
     
-    // this alerts more than number of tries
-    alert(numTries);
     var triesLeft = maxTry-numTries;
     console.log("Number of Tries Left: " + triesLeft);
     document.getElementById("displayTriesLeft").innerHTML = "Number of Tries Left: " + triesLeft;

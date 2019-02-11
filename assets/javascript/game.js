@@ -5,7 +5,6 @@ var candyWords = [
   "gum",
   "lollipops",
   "chocolate",
-  "gum",
   "gumdrops",
   "caramel",
   "snickers",
@@ -52,8 +51,32 @@ var letters;
 // the number of tries so far 
 var numTries;
 
-
+// shuffle the array so you don't always get the same order of words
+candyWords = shuffle(candyWords);
 resetGame();
+console.log(candyWords);
+
+
+//Let's jumble the order of candyWords array, So you never know what you're going to get.
+// Fisher-Yates (aka Knuth) Shuffle.
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element... Once element is picked the currentIndex is reduced and so is the range of randomIndex
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
+  }
 
 // This function will prepare the screen for a new game
 function resetGame()

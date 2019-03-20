@@ -35,3 +35,24 @@ button{
     padding: 0, 0, 0, 0;
     */
 }
+
+
+
+/*I'm assuming that a keyboard exists when there is a mouse or a touchpad as primary input. You can query for that with
+This query would go false for devices with a touchscreen, stylus devices and also exotic devices like camera input.
+Note that with this query you're querying for primary input devices. You can query all input devices with  any-hover and any-pointer. */
+
+/* on a cell phone, would like to see this work but don't know how to test it without deploying it*/
+/* Eventually I would like to display onscreen keyboard when we are on a device with no keypad */
+/*
+@media !((hover: hover) and (pointer: fine)) { 
+
+    body {
+        background-color: #cyan; 
+     }
+     h1{
+        color: yellow;
+    }
+ }
+ */
+

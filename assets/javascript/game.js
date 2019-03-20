@@ -1,3 +1,5 @@
+// $(document).ready(function(){
+
 // Bank of Words for the Word Guess Game
 // Top Secret!!
 var candyWords = [
@@ -165,6 +167,13 @@ function hideLose() {
 
 // MAIN PROCESS
 // ==============================================================================
+/*
+window.addEventListener('touchstart', function() {
+    // the user touched the screen!
+    alert("you toched the screen");
+    //bring up virtual keyboard
+  });
+*/
 
 // Captures keyboard input. The letter pressed will be the user's guess.
 document.onkeyup = function(event) 
@@ -277,4 +286,4 @@ document.onkeyup = function(event)
 
 } 
  
-
+// });

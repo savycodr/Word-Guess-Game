@@ -1,5 +1,5 @@
 # Word-Guess-Game
-This is a game where the player guesses the letters in a mystery word. The player wins if they can guess all the letters in a word before they the run out of their allotted guesses.
+The player guesses the letters in a mystery word. The player wins if they can guess all the letters in a word before they the run out of their allotted guesses. Click [HERE]( https://savycodr.github.io/word-guess-game/) to play the game.
 
 ### Instructions
 
@@ -13,6 +13,23 @@ This is a game where the player guesses the letters in a mystery word. The playe
 
 * After a few seconds a new game will start.
 
+### Technology
+
+* This application uses Javascript to dynamically update the DOM. It listens for the player to enter a letter and then updates the display with the letter placed within the mystery word and in the letters guessed section. It also updates the number of guesses left. 
+
+* The game uses setTimeout to display the correct answer screen or the winner screen at the end of the game. The screen automatically disappears after 3-5 seconds (depends on the screen, there is extra time to display the correct answer so the player can evaluate how close they were to winning).
+
+* The game plays audio after a guess and at the end of a game.
+
+* The game has user validation. It checks that the user has entered a valid letter.
+
+* The game shuffles the mystery words a the start of a player's session so the player won't experience the same game on refresh.
+
+
+### Future Enhancements
+
+* This game is mobile responsive, however, it does not work with out a keyboard. I would like to write a keyboard for smaller screens. This would allow you to play the game on tablets and phones.
+
 ### Credits
-There is a credits page for audio and image files. It can be found at [credits](credit.html).
+There is a credits page for audio and image files. It can be found at [credits](https://savycodr.github.io/word-guess-game/credit.html).
 

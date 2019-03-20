@@ -19,9 +19,9 @@ The player guesses the letters in a mystery word. The player wins if they can gu
 
 * The game uses setTimeout to display the correct answer screen or the winner screen at the end of the game. The screen automatically disappears after 3-5 seconds (depends on the screen, there is extra time to display the correct answer so the player can evaluate how close they were to winning).
 
-* The game plays audio after a guess and at the end of a game.
+* The game plays audio at the end of a game.
 
-* The game has user validation. It checks that the user has entered a valid letter.
+* The game has user validation. It checks that the user has entered a valid letter. It checks that the user has entered a new letter (no repeat guesses).
 
 * The game shuffles the mystery words a the start of a player's session so the player won't experience the same game on refresh.
 

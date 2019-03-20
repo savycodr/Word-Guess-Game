@@ -1,5 +1,3 @@
-// $(document).ready(function(){
-
 // Bank of Words for the Word Guess Game
 // Top Secret!!
 var candyWords = [
@@ -59,7 +57,7 @@ resetGame();
 console.log(candyWords);
 
 
-//Let's jumble the order of candyWords array, So you never know what you're going to get.
+// Let's jumble the order of candyWords array, So you never know what you're going to get.
 // Fisher-Yates (aka Knuth) Shuffle.
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -285,5 +283,3 @@ document.onkeyup = function(event)
     }
 
 } 
- 
-// });

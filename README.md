@@ -19,6 +19,8 @@ The player guesses the letters in a mystery word. The player wins if they can gu
 
 * The game uses setTimeout to display the correct answer screen or the winner screen at the end of the game. The screen automatically disappears after 3-5 seconds (depends on the screen, there is extra time to display the correct answer so the player can evaluate how close they were to winning).
 
+* Utilizes Bootstrap CSS library. Uses a font called Pacifico from Google Fonts.
+
 * The game plays audio at the end of a game.
 
 * The game has user validation. It checks that the user has entered a valid letter. It checks that the user has entered a new letter (no repeat guesses).
